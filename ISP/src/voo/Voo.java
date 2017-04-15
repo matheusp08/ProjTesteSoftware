@@ -1,3 +1,4 @@
+package voo;
 
 public class Voo {
 	int duracao;
