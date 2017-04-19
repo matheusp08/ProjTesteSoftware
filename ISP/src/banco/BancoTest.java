@@ -27,13 +27,13 @@ public class BancoTest {
 		@Test
 		public void Teste_TempoChegadaNegativoETempoAtendimentoZedo() {
 			int C = 1;
-			int N = 2; // TODO corrigir no doc
+			int N = 2;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
 			tempos.add("-1 0");
-			tempos.add("0 1"); // TODO corrigir no doc
+			tempos.add("0 1");
 			
-			int valorEsperado = -1; // Erro TODO corrigir no doc
+			int valorEsperado = -1;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
@@ -41,7 +41,7 @@ public class BancoTest {
 		
 		@Test
 		public void Teste_TempoChegadaETempoAtendimentoMaioresQueLimite() {
-			int C = 3; // TODO corrigir no doc
+			int C = 3;
 			int N = 4;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
@@ -50,7 +50,7 @@ public class BancoTest {
 			tempos.add("300 10");
 			tempos.add("310 11");
 			
-			int valorEsperado = -1; // Erro TODO corrigir no doc
+			int valorEsperado = -1;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
@@ -61,7 +61,7 @@ public class BancoTest {
 			int C = 11;
 			int N = 0;
 			
-			int valorEsperado = -1; // Erro TODO corrigir no doc
+			int valorEsperado = -1;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, null);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
@@ -105,7 +105,7 @@ public class BancoTest {
 				}
 			}
 				
-			int valorEsperado = -1; // Erro TODO corrigir no doc
+			int valorEsperado = -1;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
