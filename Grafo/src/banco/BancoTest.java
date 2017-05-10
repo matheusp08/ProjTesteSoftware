@@ -85,4 +85,20 @@ public class BancoTest {
 			
 			Assert.assertEquals(valorEsperado, valorReal);
 		}
+		
+		@Test
+		public void TestCase6() {
+			int N = 3;
+			int C = 2;
+			
+			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("0 5");
+			tempos.add("10 10");
+			tempos.add("15 10");
+			
+			int valorEsperado = 0;
+			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
+			
+			Assert.assertEquals(valorEsperado, valorReal);
+		}
 }
