@@ -13,76 +13,30 @@ public class BancoTest {
 			banco = new Banco(); 
 		}
 
+		
 		@Test
-		public void Teste_ZeroClientesECaixas() {
-			int C = 0;
-			int N = 0;
+		public void TestCase1() {
+			int N = 1;
+			int C = 2;
+			
+			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("1 1");
 			
 			int valorEsperado = 0;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, null);
+			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
 		}
 		
 		@Test
-		public void Teste_TempoChegadaNegativoETempoAtendimentoZedo() {
-			int C = 1;
+		public void TestCase2() {
 			int N = 2;
+			int C = 1;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("-1 0");
-			tempos.add("0 1");
+			tempos.add("1 1");
+			tempos.add("3 1");
 			
-			int valorEsperado = -1;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-		
-		@Test
-		public void Teste_TempoChegadaETempoAtendimentoMaioresQueLimite() {
-			int C = 3;
-			int N = 4;
-			
-			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("0 1");
-			tempos.add("1 5");
-			tempos.add("300 10");
-			tempos.add("310 11");
-			
-			int valorEsperado = -1;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-		
-		@Test
-		public void Teste_NumeroCaixasMaiorQueLimite() {
-			int C = 11;
-			int N = 0;
-			
-			int valorEsperado = -1;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, null);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-
-		@Test
-		public void Teste_LimiteMaximoNumeroCaixasEClientes() {
-			int C = 10;
-			int N = 1000;
-			
-			ArrayList<String> tempos = new ArrayList<String>();
-			
-			while(tempos.size() < N){
-				for(int i = 0; i < 300; i++){
-					if (tempos.size() == N)
-						break;
-					else
-						tempos.add(i + " 1");
-				}
-			}
-				
 			int valorEsperado = 0;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
@@ -90,23 +44,44 @@ public class BancoTest {
 		}
 		
 		@Test
-		public void Teste_NumeroClientesMaiorQueLimite() {
-			int C = 10;
-			int N = 1001;
+		public void TestCase3() {
+			int N = 3;
+			int C = 1;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("1 10");
+			tempos.add("1 10");
+			tempos.add("1 2");
 			
-			while(tempos.size() < N){
-				for(int i = 0; i < 300; i++){
-					if (tempos.size() == N)
-						break;
-					else
-						tempos.add(i + " 1");
-				}
-			}
-				
-			int valorEsperado = -1;
+			int valorEsperado = 1;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
+			
+			Assert.assertEquals(valorEsperado, valorReal);
+		}
+		
+		@Test
+		public void TestCase4() {
+			int N = 3;
+			int C = 2;
+			
+			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("1 10");
+			tempos.add("1 10");
+			tempos.add("1 5");
+			
+			int valorEsperado = 0;
+			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
+			
+			Assert.assertEquals(valorEsperado, valorReal);
+		}
+		
+		@Test
+		public void TestCase5() {
+			int N = 0;
+			int C = -1;
+			
+			int valorEsperado = 0;
+			int valorReal = banco.CalculaClientesEmEspera(C, N, null);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
 		}
