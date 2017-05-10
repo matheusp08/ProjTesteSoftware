@@ -7,7 +7,7 @@ public class Banco {
 	public int CalculaClientesEmEspera(int C, int N, ArrayList<String> tempos){
 		System.out.print("[1-");
 		if (N <= C){
-			System.out.print("2]");
+			System.out.println("2]");
 			return 0;
 		}
 		else{
@@ -28,6 +28,8 @@ public class Banco {
 				System.out.print("6-");
 				termina.sort(null);
 				
+				tempoChegada = Integer.parseInt(tempos.get(i).split(" ")[0]);
+				tempoAtendimento = Integer.parseInt(tempos.get(i).split(" ")[1]);
 				System.out.print("7-");
 				while (termina.get(0) <= tempoChegada){
 					termina.remove(0);
@@ -40,8 +42,6 @@ public class Banco {
 					System.out.print("7-");
 				}
 				
-				tempoChegada = Integer.parseInt(tempos.get(i).split(" ")[0]);
-				tempoAtendimento = Integer.parseInt(tempos.get(i).split(" ")[1]);
 				System.out.print("10-");
 				if (caixas > 1){
 					System.out.print("11-");
@@ -49,11 +49,11 @@ public class Banco {
 					termina.add(tempoChegada + tempoAtendimento);
 				}
 				else{
+					System.out.print("12-");
 					indiceMinimo = termina.indexOf(Collections.min(termina));
-					atendimento = termina.indexOf(indiceMinimo);
+					atendimento = termina.get(indiceMinimo);
 					termina.remove(indiceMinimo);
 					termina.add(atendimento + tempoAtendimento);
-					System.out.print("12-");
 					if (atendimento - tempoChegada > 20){
 						System.out.print("13-");
 						count++;
@@ -61,7 +61,7 @@ public class Banco {
 				}
 				System.out.print("14-4-");
 			}
-			System.out.print("5]");
+			System.out.println("5]");
 			return count;
 		}
 	}

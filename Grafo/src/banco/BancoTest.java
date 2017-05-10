@@ -77,11 +77,17 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase5() {
-			int N = 0;
-			int C = -1;
+			int N = 4;
+			int C = 2;
+			
+			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("1 10");
+			tempos.add("12 10");
+			tempos.add("13 5");
+			tempos.add("13 10");
 			
 			int valorEsperado = 0;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, null);
+			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
 		}
@@ -95,6 +101,29 @@ public class BancoTest {
 			tempos.add("0 5");
 			tempos.add("10 10");
 			tempos.add("15 10");
+			
+			int valorEsperado = 0;
+			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
+			
+			Assert.assertEquals(valorEsperado, valorReal);
+		}
+		
+		@Test
+		public void TestCase7() {
+			int N = 10;
+			int C = 2;
+			
+			ArrayList<String> tempos = new ArrayList<String>();
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("0 10");
 			
 			int valorEsperado = 0;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
