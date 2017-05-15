@@ -32,11 +32,13 @@ public class BancoTest {
 		@Test
 		public void TestCase2() {
 			System.out.println("Test 2:");
-			int N = 2;
-			int C = 1;
+			int N = 4;
+			int C = 3;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
 			tempos.add("1 1");
+			tempos.add("1 10");
+			tempos.add("3 10");
 			tempos.add("3 1");
 			
 			int valorEsperado = 0;
@@ -48,91 +50,38 @@ public class BancoTest {
 		@Test
 		public void TestCase3() {
 			System.out.println("Test 3:");
-			int N = 3;
-			int C = 1;
+			int N = 10;
+			int C = 3;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("1 10");
-			tempos.add("1 10");
-			tempos.add("1 2");
+			tempos.add("0 10");
+			tempos.add("0 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
+			tempos.add("10 10");
 			
-			int valorEsperado = 1;
+			int valorEsperado = 2;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
+
 			Assert.assertEquals(valorEsperado, valorReal);
 		}
 		
 		@Test
 		public void TestCase4() {
 			System.out.println("Test 4:");
-			int N = 3;
-			int C = 2;
+			int N = 2;
+			int C = 1;
 			
 			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("1 10");
-			tempos.add("1 10");
-			tempos.add("1 5");
-			
-			int valorEsperado = 0;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-		
-		@Test
-		public void TestCase5() {
-			System.out.println("Test 5:");
-			int N = 4;
-			int C = 2;
-			
-			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("1 10");
-			tempos.add("12 10");
-			tempos.add("13 5");
-			tempos.add("13 10");
-			
-			int valorEsperado = 0;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-		
-		@Test
-		public void TestCase6() {
-			System.out.println("Test 6:");
-			int N = 3;
-			int C = 2;
-			
-			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("0 5");
+			tempos.add("0 10");
 			tempos.add("10 10");
-			tempos.add("15 10");
 			
 			int valorEsperado = 0;
-			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
-			
-			Assert.assertEquals(valorEsperado, valorReal);
-		}
-		
-		@Test
-		public void TestCase7() {
-			System.out.println("Test 7:");
-			int N = 10;
-			int C = 2;
-			
-			ArrayList<String> tempos = new ArrayList<String>();
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			tempos.add("0 10");
-			
-			int valorEsperado = 7;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);
