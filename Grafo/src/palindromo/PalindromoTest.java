@@ -16,7 +16,7 @@ public class PalindromoTest {
 	@Test
 	public void TestCase1() {
 		System.out.println("TEST 1:");
-		Assert.assertTrue(palindromo.isPalindromo("arara"));
+		Assert.assertTrue(palindromo.isPalindromo(" arara "));
 	}
 
 	@Test
@@ -58,6 +58,6 @@ public class PalindromoTest {
 	@Test
 	public void TestCase8() {
 		System.out.println("TEST 8:");
-		Assert.assertTrue(palindromo.isPalindromo("aa "));
+		Assert.assertFalse(palindromo.isPalindromo("ab "));
 	}
 }

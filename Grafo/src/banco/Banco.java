@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Banco {
 	public int CalculaClientesEmEspera(int C, int N, ArrayList<String> tempos){
-		System.out.print("[1-");
+		System.out.print("Caminho: [1-");
 		if (N <= C){
 			System.out.println("2]");
 			return 0;

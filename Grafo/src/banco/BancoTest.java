@@ -16,6 +16,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase1() {
+			System.out.println("Test 1:");
 			int N = 1;
 			int C = 2;
 			
@@ -30,6 +31,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase2() {
+			System.out.println("Test 2:");
 			int N = 2;
 			int C = 1;
 			
@@ -45,6 +47,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase3() {
+			System.out.println("Test 3:");
 			int N = 3;
 			int C = 1;
 			
@@ -61,6 +64,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase4() {
+			System.out.println("Test 4:");
 			int N = 3;
 			int C = 2;
 			
@@ -77,6 +81,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase5() {
+			System.out.println("Test 5:");
 			int N = 4;
 			int C = 2;
 			
@@ -94,6 +99,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase6() {
+			System.out.println("Test 6:");
 			int N = 3;
 			int C = 2;
 			
@@ -110,6 +116,7 @@ public class BancoTest {
 		
 		@Test
 		public void TestCase7() {
+			System.out.println("Test 7:");
 			int N = 10;
 			int C = 2;
 			
@@ -125,7 +132,7 @@ public class BancoTest {
 			tempos.add("0 10");
 			tempos.add("0 10");
 			
-			int valorEsperado = 0;
+			int valorEsperado = 7;
 			int valorReal = banco.CalculaClientesEmEspera(C, N, tempos);
 			
 			Assert.assertEquals(valorEsperado, valorReal);

@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Palindromo {
 
 	public boolean isPalindromo(String palavra) {
-		System.out.print("[1-");
+		System.out.print("Caminho: [1-");
 		Scanner sc = new Scanner(palavra);
 		boolean isPalindromo = false;
-		String letra;
+		String letra, resposta;
 		int contador_entrada, contador_texto, i, j;
 		char[] texto = new char[11];
 		int palindromo;
@@ -48,14 +48,15 @@ public class Palindromo {
 		if (palindromo == 1) {
 			System.out.print("12-");
 			isPalindromo = true;
-			//System.out.println("SIM\n");
+			resposta = "SIM";
 		} else {
 			System.out.print("13-");
 			isPalindromo = false;
-			//System.out.println("NAO\n");
+			resposta = "NAO";
 		}
 		System.out.println("14]");
 		sc.close();
+		System.out.println("Resultado obtido: " + resposta);
 		return isPalindromo;
 	}
 
