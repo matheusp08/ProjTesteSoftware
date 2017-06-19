@@ -1,7 +1,5 @@
 package janela;
 
-import java.util.Scanner;
-
 public class Janela2 {
 	
 	public static int calculaJanela(int p1, int p2, int p3){
@@ -31,23 +29,4 @@ public class Janela2 {
         
         return soma*100;
 	}
-
-    public static void main(String[] args) {
-        
-        int p1, p2, p3;
-        
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite um valor: ");
-        String valor = entrada.nextLine();
-        entrada.close();
-        
-        String [] posicao = valor.split(" ");
-        p1 = Integer.parseInt(posicao[0]);
-        p2 = Integer.parseInt(posicao[1]);
-        p3 = Integer.parseInt(posicao[2]);
-        
-        System.out.println(Janela2.calculaJanela(p1, p2, p3));
-        
-    }
-
 }

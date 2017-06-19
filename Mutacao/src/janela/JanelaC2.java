@@ -1,8 +1,5 @@
 package janela;
 
-import java.util.Scanner;
-
-
 public class JanelaC2 {
 	public static int calculaJanela(int p1, int p2, int p3) {
 	    
@@ -19,19 +16,4 @@ public class JanelaC2 {
 	    }
 	    
 	}
-
-	public static void main(String[] args) {
-    	
-    	Scanner scanner = new Scanner(System.in);
-        int posFolha1 = scanner.nextInt();
-        int posFolha2 = scanner.nextInt();
-        int posFolha3 = scanner.nextInt();
-        
-        scanner.close();
-    	
-        System.out.println(JanelaC2.calculaJanela(posFolha1, posFolha2, posFolha3));
-    	
-    	
-
-    }
 }
