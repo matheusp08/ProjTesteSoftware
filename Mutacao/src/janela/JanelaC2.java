@@ -6,11 +6,11 @@ public class JanelaC2 {
 	    if (p3 - p1 < 200) {
 	        return 100 * (400 - p3 + p1);
 	    } else if (p2 - p1 < 200 && p3 - p2 < 200) {
-	        return 100 * (400 - p3 + p1);
+	    	return 100 * (400 - p3 + p1);
 	    } else if (p2 - p1 < 200 && p3 - p2 > 200) {
-	        return 100 * (200 - p2 + p1);
+	    	return 100 * (200 - p2 + p1);
 	    } else if (p3 - p2 < 200 && p2 - p1 > 200) {
-	        return 100 * (200 - p3 + p2);
+	    	return 100 * (200 - p3 + p2);
 	    } else {
 	        return 0;
 	    }
